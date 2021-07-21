@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import {
   registerDecorator,
   ValidationArguments,
@@ -7,8 +8,11 @@ import {
 } from 'class-validator';
 import { UsersService } from './usersService';
 
+@Injectable()
 @ValidatorConstraint()
-class IsUserAlreadyExistConstraint implements ValidatorConstraintInterface {
+export class IsUserAlreadyExistConstraint
+  implements ValidatorConstraintInterface
+{
   constructor(private usersService: UsersService) {}
 
   validate(
