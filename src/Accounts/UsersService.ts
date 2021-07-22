@@ -13,7 +13,7 @@ export class UsersService {
   }
 
   listOneByName(name: string): User {
-    const user = this.storage.find((index) => name === index.name);
+    const user = this.storage.find((index) => index.name === name);
     return user;
   }
 }
