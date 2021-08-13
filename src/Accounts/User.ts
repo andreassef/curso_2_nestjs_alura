@@ -7,7 +7,6 @@ export class User {
   @IsNotEmpty({
     message: 'Nome completo é obrigatório',
   })
-  @IsString()
   @IsUserAlreadyExist({
     message: 'O usuario ja existe!',
   })
